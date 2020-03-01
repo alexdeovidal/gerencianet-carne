@@ -1,0 +1,31 @@
+{
+  "name": "alexdeovidal/gerencianet-carne",
+  "description": "",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Alex Vidal",
+      "email": "contato@webav.com.br",
+      "role": "Developer"
+    }
+  ],
+  "config": {
+    "vendor-dir": "vendor"
+  },
+  "autoload": {
+    "psr-4": {
+      "Source\\": "source/"
+    },
+    "files": [
+      "source/Config/Config.php"
+    ]
+  },
+  "require": {
+    "php": "^7.2",
+    "ext-pdo": "*",
+    "ext-json": "*",
+    "coffeecode/datalayer": "^1.0",
+    "gerencianet/gerencianet-sdk-php": "2.*"
+  }
+}
