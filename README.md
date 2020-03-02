@@ -12,7 +12,7 @@
 gerencianet-carne is available via Composer:
 
 ```bash
-"alexdeovidal/gerencianet-carne": "dev-master"
+"alexdeovidal/gerencianet-carne": "^1.0"
 ```
 
 or run
