@@ -5,7 +5,6 @@
 [![Latest Version](https://img.shields.io/github/release/alexdeovidal/gerencianet-carne.svg?style=flat-square)](https://github.com/alexdeovidal/gerencianet-carne/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 [![Build](https://img.shields.io/scrutinizer/build/g/alexdeovidal/gerencianet-carne.svg?style=flat-square)](https://scrutinizer-ci.com/g/alexdeovidal/gerencianet-carne)
-[![Quality Score](https://img.shields.io/scrutinizer/g/alexdeovidal/gerencianet-carne.svg?style=flat-square)](https://scrutinizer-ci.com/g/alexdeovidal/gerencianet-carne)
 [![Total Downloads](https://img.shields.io/packagist/dt/alexdeovidal/gerencianet-carne.svg?style=flat-square)](https://packagist.org/packages/alexdeovidal/gerencianet-carne)
 
 ## Installation
