@@ -1,7 +1,6 @@
 # Gerencianet Carnê @alexdeovidal
 
 [![Maintainer](http://img.shields.io/badge/maintainer-@alexdeovidal-blue.svg?style=flat-square)](https://twitter.com/alexdeovidal)
-[![Source Code](http://img.shields.io/badge/source-alexdeovidal/gerencianet-carne-blue.svg?style=flat-square)](https://github.com/alexdeovidal/gerencianet-carne)
 [![PHP from Packagist](https://img.shields.io/packagist/php-v/alexdeovidal/gerencianet-carne.svg?style=flat-square)](https://packagist.org/packages/alexdeovidal/gerencianet-carne)
 [![Latest Version](https://img.shields.io/github/release/alexdeovidal/gerencianet-carne.svg?style=flat-square)](https://github.com/alexdeovidal/gerencianet-carne/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
