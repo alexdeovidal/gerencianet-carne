@@ -24,6 +24,7 @@ composer require alexdeovidal/gerencianet-carne
 ```
 
 ## Documentation
+```bash
 <?php
 require __DIR__ . "/vendor/autoload.php";
 
@@ -56,7 +57,7 @@ if(!$gn->cancelCarnet("47680"))
 }else{
     echo "carne cancelado com sucesso";
 }
-
+```
 ## License
 
 The MIT License (MIT). Please see [License File](https://github.com/alexdeovidal/gerencianet-carne/blob/master/LICENSE) for more information.
