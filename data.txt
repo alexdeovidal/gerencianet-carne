@@ -1,0 +1,150 @@
+# ************************************************************
+# Sequel Pro SQL dump
+# Versão 4541
+#
+# http://www.sequelpro.com/
+# https://github.com/sequelpro/sequelpro
+#
+# Host: escolasaolucasevangelista.com.br (MySQL 5.5.5-10.2.27-MariaDB)
+# Base de Dados: esle_alunos
+# Tempo de Geração: 2020-03-02 00:52:17 +0000
+# ************************************************************
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+# Dump da tabela carnets
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `carnets`;
+
+CREATE TABLE `carnets` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id_students` int(11) unsigned NOT NULL,
+  `carnet_id` int(11) NOT NULL,
+  `link` varchar(255) NOT NULL DEFAULT '',
+  `status` varchar(255) NOT NULL DEFAULT '',
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `Students` (`id_students`),
+  CONSTRAINT `Students` FOREIGN KEY (`id_students`) REFERENCES `students` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+# Dump da tabela students
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `students`;
+
+CREATE TABLE `students` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `parent_id` int(11) NOT NULL,
+  `admission_no` varchar(100) DEFAULT NULL,
+  `roll_no` varchar(100) DEFAULT NULL,
+  `admission_date` date DEFAULT NULL,
+  `firstname` varchar(100) DEFAULT NULL,
+  `lastname` varchar(100) DEFAULT NULL,
+  `rte` varchar(20) DEFAULT NULL,
+  `image` varchar(100) DEFAULT NULL,
+  `mobileno` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `state` varchar(100) DEFAULT NULL,
+  `city` varchar(100) DEFAULT NULL,
+  `pincode` varchar(100) DEFAULT NULL,
+  `religion` varchar(100) DEFAULT NULL,
+  `cast` varchar(50) DEFAULT NULL,
+  `dob` date DEFAULT NULL,
+  `gender` varchar(100) DEFAULT NULL,
+  `current_address` text DEFAULT NULL,
+  `permanent_address` text DEFAULT NULL,
+  `category_id` varchar(100) DEFAULT NULL,
+  `route_id` int(11) NOT NULL,
+  `school_house_id` int(11) NOT NULL,
+  `blood_group` varchar(200) NOT NULL,
+  `vehroute_id` int(11) NOT NULL,
+  `hostel_room_id` int(11) NOT NULL,
+  `adhar_no` varchar(100) DEFAULT NULL,
+  `samagra_id` varchar(100) DEFAULT NULL,
+  `bank_account_no` varchar(100) DEFAULT NULL,
+  `bank_name` varchar(100) DEFAULT NULL,
+  `ifsc_code` varchar(100) DEFAULT NULL,
+  `guardian_is` varchar(100) NOT NULL,
+  `father_name` varchar(100) DEFAULT NULL,
+  `father_phone` varchar(100) DEFAULT NULL,
+  `father_occupation` varchar(100) DEFAULT NULL,
+  `mother_name` varchar(100) DEFAULT NULL,
+  `mother_phone` varchar(100) DEFAULT NULL,
+  `mother_occupation` varchar(100) DEFAULT NULL,
+  `guardian_name` varchar(100) DEFAULT NULL,
+  `guardian_relation` varchar(100) DEFAULT NULL,
+  `guardian_phone` varchar(100) DEFAULT NULL,
+  `guardian_dob` date DEFAULT NULL,
+  `guardian_ecivil` varchar(100) DEFAULT NULL,
+  `guardian_rg` varchar(100) DEFAULT NULL,
+  `guardian_cpf` varchar(100) DEFAULT NULL,
+  `student_pag` varchar(100) DEFAULT NULL,
+  `student_mes` varchar(100) DEFAULT NULL,
+  `student_dia` varchar(100) DEFAULT NULL,
+  `guardian_occupation` varchar(150) NOT NULL,
+  `guardian_address` text DEFAULT NULL,
+  `guardian_email` varchar(100) DEFAULT NULL,
+  `father_pic` varchar(200) NOT NULL,
+  `mother_pic` varchar(200) NOT NULL,
+  `guardian_pic` varchar(200) NOT NULL,
+  `is_active` varchar(255) DEFAULT 'yes',
+  `previous_school` text DEFAULT NULL,
+  `height` varchar(100) NOT NULL,
+  `weight` varchar(100) NOT NULL,
+  `measurement_date` date NOT NULL,
+  `dis_reason` int(11) NOT NULL,
+  `note` varchar(200) DEFAULT NULL,
+  `dis_note` text NOT NULL,
+  `app_key` text DEFAULT NULL,
+  `batch_id` int(11) NOT NULL,
+  `disable_at` date NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updated_at` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+# Dump da tabela tickets
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `tickets`;
+
+CREATE TABLE `tickets` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id_carnets` int(10) unsigned NOT NULL,
+  `charge_id` int(11) NOT NULL,
+  `parcel` int(11) NOT NULL,
+  `status` varchar(255) NOT NULL DEFAULT '',
+  `value` int(11) NOT NULL,
+  `expire_at` date NOT NULL,
+  `url` varchar(255) NOT NULL DEFAULT '',
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updated_at` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `carnets` (`id_carnets`),
+  CONSTRAINT `carnets` FOREIGN KEY (`id_carnets`) REFERENCES `carnets` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
